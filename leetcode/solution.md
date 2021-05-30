@@ -1,0 +1,2 @@
+本文档用来记录leetcode前200题目中的easy与medium题目的思路。
+
