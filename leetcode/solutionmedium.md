@@ -138,10 +138,78 @@ dp[i]=max(dp[i-1],dp[i-2]+num[i]);
 
 动态规划
 
-```
+```c++
 dp[i][j] 记为从(0,0)处出发到(i,j)处路径最小和。
 dp[i][j]=min(dp[i-1][j],dp[i][j-1])+num[i][j];
 ```
 
 
+
+### 120. 三角形最小路径和
+
+动态规划
+
+```c++
+dp[i][j] 记为从(0,0)到位置(i,j)的最小路径和。
+//非边缘节点。
+dp[i][j]=min(dp[i-1][j],dp[i-1][j-1])+num[i][j]
+// 对角线节点 j=i时候dp[i-1][i]不存在
+dp[i][i]=dp[i-1][i-1]+num[i][j]
+// 左边缘节点j=0,dp[i-1][-1]不存在
+dp[i][0]=dp[i-1][j]+num[i][j]
+```
+
+### 3. 无重复字符的最长子串
+
+从字符串开始往set中放入。
+
+放入随后的字符，当放入到发现重复字符时候，删除首字符。
+
+### 48. 旋转图像
+
+不会
+
+### 73. 矩阵置零
+
+1. 建立一个同等大小的矩阵。记录每行每列的置零情况。
+
+2. 先检查0行，0列是否需要置零。
+
+   从1行，1列检查是否需要置零，如果需要则在边缘端记录。
+
+   从1行，1列进行检查，置零。
+
+   将0行，0列置零。
+
+### 128. 最长连续序列
+
+可以先将数据放到set里面。从最小的数字开始找，找到之后从最小数字递增找。
+
+### 79. 单词搜索
+
+回溯法：
+
+```c++
+void backstrace(solution){
+    if(solution){
+        get(solution)
+        return;
+    }
+    for (next_solution in solutions_list){
+        if (next_solution){
+            place_variable;
+            backtrace(next_solution);
+            remove_variabel;
+        }
+    }
+}
+```
+
+该题目需要定义一个`visited`矩阵，记录是否到访过。套用上述模板。
+
+```c++
+visited[i][j]=true
+backtrace()
+visited[i][j]=false
+```
 
