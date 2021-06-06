@@ -5,3 +5,5 @@
 
 [NLP的论文以及入门资料](./nlppapers.md)
 
+[leetcode解题记录](./leetcode/)
+
