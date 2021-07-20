@@ -91,6 +91,9 @@ base条件：
 
 动态规划。
 
+dp: s[left,right] 是否为回文串。
+从长度列举，列举开头字符。
+
 ```
 dp[left][right]=(dp[left+1][right-1])&(dp[left]==dp[right])
 ```

@@ -25,9 +25,11 @@ loop:
 ### 34
 
 left =找到第一个等于target的值。
+也就是==target时候做。right=mid-1；
+
 
 right=找到第一个大于target的值-1；
-
+也就是==target时候做。left=mid+1；
 ### 179
 
 先排序，再拼接。
