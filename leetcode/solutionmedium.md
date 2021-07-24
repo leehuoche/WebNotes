@@ -273,4 +273,5 @@ ist(TreeNode* no,long long low,long long high)
 ### 102. 二叉树的层序遍历
 
 队列。先放进的先拿出，拿出后依次放入左、右子树。再拿出。
+双层循环，size=q.size();
 
