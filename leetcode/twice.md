@@ -73,7 +73,8 @@ while(pj){
 归并排序
 
 分治
-
+fast!=tail
+而不是 fast!=nullptr
 ```c++
 //先将两半排序，再将两半合并。
 
