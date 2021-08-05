@@ -150,6 +150,122 @@ loop:
 
 
 
+### 17. 电话号码的字母组合
+
+动态规划
+
+```c++
+设f(n) 为包含n个数字的号码的全部子集。
+f(n+1)=对于f(n)的所有元素加入当前字符串的每个字符;
+最后返回指定长度的字符串。
+```
+
+当n=0：  空字符串
+
+n=1： 空，a，b，c
+
+n=2：空，a,b,c,      d,e,f,   ad,ae,af,  bd,be,bf,   cd,ce,cf.
+
+trick： 空集：{}
+
+loop： 电话号码。
+
+loop：f(n-1)的元素。（loop之前获得f(n-1)元素个数。 ）
+
+loop:   当前电话号码的字符。
+
+评：  这道题与其他的dp区别在于，f(n)与f(n-1)是在同一个数组中，也就是说：f(n)=ans[0..size];   f(n-1)=ans[0,f_little_size]. 且每个电话号码包含了三个字符，增加了一层循环。
+
+### 19. 删除链表的倒数第 N 个结点
+
+前后指针
+
+<img src="./file/19.jpg" alt="19" style="zoom:80%;" />
+
+易错点：
+
+当链表只有一个节点，也就是：k=1  and  n=1时候。
+
+当k>1 且 k=n时候。 也就是删除头节点。
+
+### 20. 有效的括号
+
+用栈来解决。
+
+如果是左括号，push
+
+如果是右括号，检查括号是否可以与栈顶元素相匹配。如果匹配则弹出，否则就是无效括号。
+
+trick：
+
+栈顶元素：`stack.top()`
+
+如果插入右括号时候，栈已经空。则无效。
+
+### 21. 合并两个有序链表
+
+创建一个头节点`dummy`。
+
+**如果要求不能复制节点**，
+
+移动指向dummy的一个指针，找到最大的值，两个链表的节点向后挪动。
+
+最后判断是否两个链表结束。添加未结束的链表节点。
+
+**如果能复制节点**
+
+找到最大的值，然后创建以当前节点值的新节点。
+
+trick：创建头节点。
+
+### 22. 括号生成
+
+回溯法：
+
+```c
+base 条件
+    总的括号个数=2n
+
+其他的可能选项：
+左括号个数<n;放入左括号。
+右括号个数<left时候;放入右括号。
+```
+
+这道题的思路：
+
+往每个位置放置括号。有两种选择，左括号或者右括号。
+
+左括号先放入，且最多只能放置n个。
+
+放入右括号前必须有左括号，所以在 right<left时候可以放入右括号。
+
+```c
+n=2时候：
+str.push_back (
+backtrace left=0:right=0 :str=(
+str.push_back (
+backtrace left=1:right=0 :str=((
+str.push_back )
+backtrace left=2:right=0 :str=(()
+str.push_back )
+backtrace left=2:right=1 :str=(())
+----------------------------------ans push back(())
+str.pop_back )
+str.pop_back )
+str.pop_back (
+str.push_back )
+backtrace left=1:right=0 :str=()
+str.push_back (
+backtrace left=1:right=1 :str=()(
+str.push_back )
+backtrace left=2:right=1 :str=()()
+-----------------------------------ans push back()()
+str.pop_back )
+str.pop_back (
+str.pop_back )
+str.pop_back (
+```
+
 
 
 ### 258. 各位相加
