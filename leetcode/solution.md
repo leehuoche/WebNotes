@@ -180,7 +180,7 @@ loop:   当前电话号码的字符。
 
 前后指针
 
-<img src="file/19.jpg" alt="19" style="zoom:80%;" />
+<img src="file/19.JPG" alt="19" style="zoom:80%;" />
 
 易错点：
 
@@ -310,7 +310,7 @@ loop： left<=right.
 
 注意：循环的终止条件。画图能有效找到target的位置。
 
-![a](file/33.jpg)
+![a](file/33.JPG)
 
 ### 34.在排序数组中查找元素的第一个和最后一个位置
 
