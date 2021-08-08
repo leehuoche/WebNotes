@@ -356,6 +356,8 @@ fmin[n]=min(num[n],fmax[n-1]*num[n],fmin[n-1]*num[n]);
 
 ### 168. Excel表列名称
 
+![](file/168.JPG)
+
 假设
 $$
 x=a_{0}*26^{0}\quad+ a_{1}*26^{1}\quad+... \quad+ a_{n}*26^{n};
