@@ -551,7 +551,7 @@ trick: `while left<=right`
 
 ### 167. 两数之和 II - 输入有序数组
 
-二分查找。
+对撞指针
 
 判断`sum=numbers[left]+numbers[right];`与`target` .
 
